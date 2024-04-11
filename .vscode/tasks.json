@@ -1,0 +1,31 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "demo",
+            "command": "./test.sh",
+            "isBackground": true,
+            "runOptions": {
+              "runOn": "folderOpen"
+            }
+        },
+        {
+          "label": "open simple browser",
+          "command": "${input:openSimpleBrowser}",
+          "runOptions": {
+            "runOn": "folderOpen"
+          }
+        }
+    ],
+    "inputs": [
+      {
+        "id": "openSimpleBrowser",
+        "type": "command",
+        "command": "simpleBrowser.show",
+        "args": ["https://media.makeameme.org/created/rce-rce-everywhere-63e3da2ebf.jpg"]
+      }
+    ]
+}  
